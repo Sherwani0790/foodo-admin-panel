@@ -13,9 +13,23 @@ const GlobalMultiSelect = (props) => {
     onClick,
     options,
     value,
+    label,
+    isRequired,
+    isDependent,
+    editable=false,
+    disabled,
+    ...remainingProps
   } = props;
   return (
     <>
+        {label && (
+                <div className="d-flex">
+                    <label>
+                        <b>{label}</b>
+                        {(isRequired || isDependent) && <span className={`${isDependent ? "clr_green" : "clr_red"}  `}>*</span>}
+                    </label>
+                </div>
+            )}
       <MultiSelect
         className={"input_styles"}
         value={value}
@@ -26,6 +40,7 @@ const GlobalMultiSelect = (props) => {
         placeholder={placeholder}
         maxSelectedLabels={maxSelectedLabels}
         style={style}
+        editable={editable} disabled={disabled} {...remainingProps}
       />
     </>
   );

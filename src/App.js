@@ -29,6 +29,7 @@ import Dashboard from "./components/Dashboard";
 import Login from "./pages/login/Login";
 import UserManagement from "./pages/usermanagement";
 import { useSelector } from "react-redux";
+import SupportDocument from "./pages/supportdocument";
 // import ForgotPass from "./pages/login/forgotpass";
 // import ProfileClient from "./pages/managment/clients/clientdetails/component/profile";
 
@@ -155,8 +156,17 @@ const App = () => {
             items: [
                 {
                     label: "User Management",
-                    icon: "pi pi-fw pi-home",
+                    icon: "pi pi-fw pi-user",
                     to: "/api/usermanagement",
+                },
+            ],
+        },
+        {
+            items: [
+                {
+                    label: "Support",
+                    icon: "pi pi-fw pi-file",
+                    to: "/api/support",
                 },
             ],
         },
@@ -213,6 +223,8 @@ const App = () => {
                                     
                                     {/* UserManagement */}
                                     <Route path="/api/usermanagement" exact component={UserManagement} />
+                                   {/* Support Document */}
+                                    <Route path="/api/support" exact component={SupportDocument} />
                                     
                                 </Switch>
                             </div>
