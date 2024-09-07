@@ -23,7 +23,7 @@ const AddEditDoc = (props) => {
 
     //Formik Vaidations
     const validationSchema = Yup.object().shape({
-        fileName: Yup.mixed().required("Full Name is required"),
+        fileName: Yup.mixed().required("File Name is required"),
         selectArea: Yup.mixed().required("Area is required"),
     });
 
